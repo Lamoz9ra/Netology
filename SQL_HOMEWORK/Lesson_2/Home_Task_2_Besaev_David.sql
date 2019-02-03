@@ -22,6 +22,10 @@ where r.rating=5
 limit 5;
 
 -- пункт 3
+select
+	count(movieid) as missingmovie 
+from ratings 
+where movieid is null;
 
 select 
 	userid, 
