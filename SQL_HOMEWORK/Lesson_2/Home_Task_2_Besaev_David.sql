@@ -25,7 +25,7 @@ limit 5;
 select
 	count(movieid) as missingmovie 
 from ratings 
-where movieid is null;
+where rating is null;
 
 select 
 	userid, 
