@@ -79,6 +79,28 @@ group by d.id, d.name
 order by 3 DESC 
 limit 1;
 
+-- Задача c) -без использования LIMIT
+select 
+	d.id, 
+	d.name, 
+	sum(e.NUM_PUBLIC) as sum_count_pub 
+from department as d inner join Employee as e 
+	on d.ID=e.department_id 
+group by d.id, d.name  
+having sum(e.NUM_PUBLIC) = (select 
+			    	max(a.sum_count_pub) 
+			    from (
+				    select 
+				    	d.id, 
+				    	d.name, 
+				    	sum(e.NUM_PUBLIC) as sum_count_pub 
+				    from department as d inner join Employee as e 
+				    	on d.ID=e.department_id 
+				    group by d.id, d.name 
+				    order by 3 DESC 
+				    limit 1) as a) 
+order by 3 DESC;
+
 -- Задача d)
 
 with a as(
