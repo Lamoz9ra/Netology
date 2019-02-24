@@ -1,28 +1,28 @@
 CREATE TABLE Customer(
-   	ID		INT PRIMARY KEY     	NOT NULL	,
-	NAME       	VARCHAR   				,
+   	ID			INT PRIMARY KEY     NOT NULL,
+	NAME       	VARCHAR   					,
   	SEX       	VARCHAR  
 );
 
 
 CREATE TABLE Agent(
-   ID			INT PRIMARY KEY     	NOT NULL	,
-   NAME       		VARCHAR    					
+   ID			INT PRIMARY KEY     NOT NULL,
+   NAME       	VARCHAR    					
 );
 
 CREATE TABLE Emp(
-   	ID		INT PRIMARY KEY    	NOT NULL	,
-   	NAME       	VARCHAR    								
+   	ID				INT PRIMARY KEY     			NOT NULL,
+   	NAME       		VARCHAR    								
 );
 
 CREATE TABLE Sales(
-   	ID		INT PRIMARY KEY     	NOT NULL	,
-	ID_CUSTOMER	int REFERENCES Customer	NOT NULL	,
-  	ID_AGENT	int REFERENCES Agent	NOT NULL	,
- 	ID_Emp		int REFERENCES Emp	NOT NULL	,
-   	PRODUCT     	VARCHAR 				,
-  	SALE_AMOUNT	int 			NOT NULL	,
-  	RETURN_FLG	CHAR(1)			NOT NULL
+   	ID			INT PRIMARY KEY     		NOT NULL,
+	ID_CUSTOMER	int REFERENCES Customer		NOT NULL,
+  	ID_AGENT	int REFERENCES Agent		NOT NULL,
+ 	ID_Emp		int REFERENCES Emp			NOT NULL,
+   	PRODUCT     VARCHAR 						,
+  	SALE_AMOUNT	int 						NOT NULL,
+  	RETURN_FLG	CHAR(1)						NOT NULL
 );
 
 -- Вставка данных
@@ -37,18 +37,18 @@ insert into Agent values
 insert into Emp values
 ('1', 'Kate'	),
 ('2', 'Lidia' 	),
-('3', 'Alexey' 	),
+('3', 'Alexey' ),
 ('4', 'Pier'	),
 ('5', 'Aurel'	),
-('6', 'Klaudia'	);
+('6', 'Klaudia');
 
 insert into Customer values
 ('1', 'Andrey', 'm'	),
-('2', 'Sasha', 	'm' 	),
-('3', 'Petr' , 	'm'	),
+('2', 'Sasha', 'm' 	),
+('3', 'Petr' , 'm'	),
 ('4', 'Nikita', 'm'	),
-('5', 'Vera', 	'f'	),
-('6', 'Lena', 	'f'	);
+('5', 'Vera', 'f'	),
+('6', 'Lena', 'f'	);
 
 insert into Sales values
 ('1', 	'2', '1', '1', 'Shoes', 1000, 'N'	),
