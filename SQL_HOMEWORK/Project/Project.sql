@@ -1,28 +1,28 @@
 CREATE TABLE Customer(
-   	ID			INT PRIMARY KEY     NOT NULL,
-	NAME       	VARCHAR   					,
+   	ID		INT PRIMARY KEY     NOT NULL	,
+	NAME       	VARCHAR   			,
   	SEX       	VARCHAR  
 );
 
 
 CREATE TABLE Agent(
-   ID			INT PRIMARY KEY     NOT NULL,
-   NAME       	VARCHAR    					
+   ID			INT PRIMARY KEY     NOT NULL	,
+   NAME       		VARCHAR    					
 );
 
 CREATE TABLE Emp(
-   	ID				INT PRIMARY KEY     			NOT NULL,
-   	NAME       		VARCHAR    								
+   	ID		INT PRIMARY KEY     NOT NULL	,
+   	NAME    	VARCHAR    								
 );
 
 CREATE TABLE Sales(
-   	ID			INT PRIMARY KEY     		NOT NULL,
+   	ID		INT PRIMARY KEY     		NOT NULL,
 	ID_CUSTOMER	int REFERENCES Customer		NOT NULL,
   	ID_AGENT	int REFERENCES Agent		NOT NULL,
- 	ID_Emp		int REFERENCES Emp			NOT NULL,
-   	PRODUCT     VARCHAR 						,
-  	SALE_AMOUNT	int 						NOT NULL,
-  	RETURN_FLG	CHAR(1)						NOT NULL
+ 	ID_Emp		int REFERENCES Emp		NOT NULL,
+   	PRODUCT     	VARCHAR 				,
+  	SALE_AMOUNT	int 				NOT NULL,
+  	RETURN_FLG	CHAR(1)				NOT NULL
 );
 
 -- Вставка данных
