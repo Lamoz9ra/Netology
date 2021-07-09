@@ -2,4 +2,4 @@
 *.txt
 FEML-1/7. Work with variables/Police_Department_Incident_Reports__2018_to_Present.csv
 FEML-1/9. Ensembling/train.csv
-Time_series\5-Сингулярный спектральный анализ\A_DeviceMotion_data
+Time_series/5-Сингулярный спектральный анализ/A_DeviceMotion_data/**
